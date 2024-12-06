@@ -1,5 +1,9 @@
 # **Sentiment Analysis Using Fine-Tuned BERT**  
 ### **By Ansh Sharma**  
+---
+# **Deployed Link**--
+- ## Google Colab -- https://colab.research.google.com/drive/1xtIr_MBp--2J8Qhasv7I1Bv6KYLlSHJv?usp=sharing
+- ## Wandb AI -- https://wandb.ai/anshsharma21050421/sentiment-analysis-api/runs/5neuwzts/overview
 
 Welcome to my sentiment analysis project! This repository showcases the fine-tuning of a **BERT** model using **Hugging Face**, deployment on **WandB AI** and **Heroku** via **FastAPI**, and the complete workflow of testing, evaluating, and productizing the model for real-world applications.  
 
