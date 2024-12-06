@@ -1,0 +1,46 @@
+# Import libraries
+from transformers import BertForSequenceClassification, BertTokenizer
+import torch
+import ipywidgets as widgets
+from IPython.display import display
+
+# Load your fine-tuned model and tokenizer (replace with your model path if necessary)
+model = BertForSequenceClassification.from_pretrained("./fine_tuned_bert")
+tokenizer = BertTokenizer.from_pretrained("./fine_tuned_bert")
+
+# Create a text box for user input
+input_text = widgets.Textarea(
+    value='',
+    placeholder='Type your review here...',
+    description='Review Text:',
+    disabled=False,
+    layout=widgets.Layout(width='50%', height='100px')
+)
+
+# Define a function to predict sentiment
+def predict_sentiment(text):
+    # Tokenize input text
+    inputs = tokenizer(text, return_tensors="pt", truncation=True, padding=True, max_length=128)
+    
+    # Make prediction
+    with torch.no_grad():
+        outputs = model(**inputs)
+    
+    # Get predicted sentiment (choose the max logit)
+    predicted_class = torch.argmax(outputs.logits, dim=1).item()
+    
+    # Map class index to sentiment label
+    sentiment = {0: "Negative", 1: "Neutral", 2: "Positive"}
+    predicted_sentiment = sentiment[predicted_class]
+    
+    # Display the result
+    print(f"Predicted Sentiment: {predicted_sentiment}")
+
+# Create a button to trigger the prediction
+predict_button = widgets.Button(description="Predict Sentiment")
+
+# Link the button to the prediction function
+predict_button.on_click(lambda x: predict_sentiment(input_text.value))
+
+# Display the input field and the button
+display(input_text, predict_button)
