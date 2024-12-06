@@ -3,7 +3,10 @@
 ---
 # **Deployed Link**--
 - ## Google Colab -- https://colab.research.google.com/drive/1xtIr_MBp--2J8Qhasv7I1Bv6KYLlSHJv?usp=sharing
-- ## Wandb AI -- ![image](https://github.com/user-attachments/assets/d6b8a156-8ac8-4a8b-91a8-08a4f866c83f)
+- ## Wandb AI -- https://wandb.ai/anshsharma210504
+
+- ![image](https://github.com/user-attachments/assets/d65deca6-e7ae-487e-acf6-e96832434a32)
+
 
 
 Welcome to my sentiment analysis project! This repository showcases the fine-tuning of a **BERT** model using **Hugging Face**, deployment on **WandB AI** and **Heroku** via **FastAPI**, and the complete workflow of testing, evaluating, and productizing the model for real-world applications.  
